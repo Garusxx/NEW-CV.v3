@@ -7,7 +7,7 @@ function App() {
   return (
     <Router>
       <Background />
-      <Nav />
+      {/* <Nav /> */}
       <Routes>
         <Route path="/" element={<About />} />
       </Routes>
