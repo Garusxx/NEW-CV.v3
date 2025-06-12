@@ -13,11 +13,12 @@ html {
 }
 
 :root {
-  --color-midnight-navy: #001a33;
-  --color-deep-blue: #113768;
-  --color-sky-blue: #0598ce;
+  --color-primary: #001a33;
+  --color-secondary: #113768;
+  --color-tertiarye: #0598ce;
   --color-white: #ffffff;
   --color-medium-gray: #555555;
+  --color-glass: #0598ce30;
 }
 
 .bg-video {
@@ -30,13 +31,44 @@ html {
   z-index: -1;
 }
 
+.icons {
+  position: absolute; 
+  top: 40rem; 
+  left: 10rem; 
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+  padding: 2rem;
+  z-index: 1000; 
+}
+
+.icons a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.icons ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
 .glassmorphism {
-  background: #0598ce30;
+  background: var(--color-glass);
   backdrop-filter: blur(9.3px);
   -webkit-backdrop-filter: blur(9.3px);
   border: 1.5px solid var(--color-white);
-  box-shadow: 0 0 5px var(--color-sky-blue), 0 0 10px var(--color-sky-blue),
-    0 0 20px var(--color-sky-blue), 0 0 40px var(--color-sky-blue);
+  box-shadow: 0 0 5px var(--color-tertiarye), 0 0 10px var(--color-tertiarye),
+    0 0 20px var(--color-tertiarye), 0 0 40px var(--color-tertiarye);
   border-radius: 12px;
   transition: box-shadow 0.3s ease-in-out;
 }

@@ -19,7 +19,7 @@ const About = () => {
         <div className="left-side">
           <div className="header">
             <div className="header-content glassmorphism">
-              <div>
+              <div className="avatar-container">
                 <img
                   src="/public/image/test.png"
                   className="avatar"
@@ -33,9 +33,6 @@ const About = () => {
               </div>
             </div>
           </div>
-
-
-          
         </div>
 
         <motion.div
