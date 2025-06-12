@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  font-family: "Share Tech Mono", monospace;
+  color: #f0f0f0;
+  height: 100%;
+  width: 100%;
+}
+
+:root {
+  --color-midnight-navy: #001a33;
+  --color-deep-blue: #113768;
+  --color-sky-blue: #0598ce;
+  --color-white: #ffffff;
+  --color-medium-gray: #555555;
+}
+
+.bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.glassmorphism {
+  background: #0598ce30;
+  backdrop-filter: blur(9.3px);
+  -webkit-backdrop-filter: blur(9.3px);
+  border: 1.5px solid var(--color-white);
+  box-shadow: 0 0 5px var(--color-sky-blue), 0 0 10px var(--color-sky-blue),
+    0 0 20px var(--color-sky-blue), 0 0 40px var(--color-sky-blue);
+  border-radius: 12px;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* #555555	(85,85,85)
+#ffffff	(255,255,255)
+#0598ce	(5,152,206)
+#113768	(17,55,104)
+#001a33	(0,26,51) */
