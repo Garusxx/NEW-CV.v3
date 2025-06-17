@@ -15,7 +15,7 @@ html {
 :root {
   --color-primary: #001a33;
   --color-secondary: #113768;
-  --color-tertiarye: #0598ce;
+  --color-tertiary: #0598ce;
   --color-white: #ffffff;
   --color-medium-gray: #555555;
   --color-glass: #0598ce30;
@@ -67,8 +67,8 @@ html {
   backdrop-filter: blur(9.3px);
   -webkit-backdrop-filter: blur(9.3px);
   border: 1.5px solid var(--color-white);
-  box-shadow: 0 0 5px var(--color-tertiarye), 0 0 10px var(--color-tertiarye),
-    0 0 20px var(--color-tertiarye), 0 0 40px var(--color-tertiarye);
+  box-shadow: 0 0 5px var(--color-tertiary), 0 0 10px var(--color-tertiary),
+    0 0 20px var(--color-tertiary), 0 0 40px var(--color-tertiary);
   border-radius: 12px;
   transition: box-shadow 0.3s ease-in-out;
 }

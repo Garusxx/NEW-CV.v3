@@ -3,7 +3,7 @@ button,
 button::after {
  padding: 16px 20px;
  font-size: 1rem;
- background: linear-gradient(45deg, transparent 5%, var(--color-tertiarye) 5%);
+ background: linear-gradient(45deg, transparent 5%, var(--color-tertiary) 5%);
  border: 0;
  color: var(--color-white);
  letter-spacing: 3px;
@@ -26,7 +26,7 @@ button::after {
  left: 0;
  right: 0;
  bottom: 0;
- background: linear-gradient(45deg, transparent 3%, var(--color-light) 3%, var(--color-light) 5%, var(--color-tertiarye) 5%);
+ background: linear-gradient(45deg, transparent 3%, var(--color-light) 3%, var(--color-light) 5%, var(--color-tertiary) 5%);
  text-shadow: -3px -3px 0px var(--color-white), 3px 3px 0px var(--color-light);
  clip-path: var(--slice-0);
 }
