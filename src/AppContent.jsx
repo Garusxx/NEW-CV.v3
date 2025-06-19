@@ -9,10 +9,22 @@ import {
   useLocation,
 } from "react-router-dom";
 import { useEffect, useState } from "react";
+import AboutVideo from "/video/AboutMe4k.mp4";
+import SkillsVideo from "/video/Skills.mp4";
 
 function AppContent() {
   const location = useLocation();
   const [themeColors, setThemeColors] = useState({});
+  const [video, setVideo] = useState(AboutVideo);
+  const preloadVideos = [AboutVideo, SkillsVideo];
+
+  useEffect(() => {
+    preloadVideos.forEach((src) => {
+      const video = document.createElement("video");
+      video.src = src;
+      video.preload = "auto";
+    });
+  }, []);
 
   useEffect(() => {
     let theme = {};
@@ -26,6 +38,7 @@ function AppContent() {
         gray: "#555555",
         glass: "#0598CE30",
       };
+      setVideo(AboutVideo);
     } else if (location.pathname === "/skills") {
       theme = {
         primary: "#FFD600",
@@ -34,6 +47,25 @@ function AppContent() {
         white: "#ffffff",
         gray: "#055",
         glass: "#fef3e248",
+      };
+      setVideo(SkillsVideo);
+    } else if (location.pathname === "/projects") {
+      theme = {
+        primary: "#2E7D32",
+        secondary: "#1B5E20",
+        tertiary: "#66BB6A",
+        white: "#ffffff",
+        gray: "#555555",
+        glass: "#2E7D3230",
+      };
+    } else if (location.pathname === "/contact") {
+      theme = {
+        primary: "#7E57C2",
+        secondary: "#512DA8",
+        tertiary: "#B39DDB",
+        white: "#ffffff",
+        gray: "#555555",
+        glass: "#7E57C230",
       };
     }
 
@@ -47,7 +79,7 @@ function AppContent() {
 
   return (
     <>
-      <Background />
+      <Background video={video} />
       <Nav theme={themeColors} />
       <Routes>
         <Route path="/" element={<About />} />
