@@ -41,12 +41,12 @@ function AppContent() {
       setVideo(AboutVideo);
     } else if (location.pathname === "/skills") {
       theme = {
-        primary: "#FFD600",
-        secondary: "#8C7500",
-        tertiary: "#FFEB66",
-        white: "#ffffff",
-        gray: "#055",
-        glass: "#fef3e248",
+        primary: "#181C14", 
+        secondary: "#3C3D37", 
+        tertiary: "#697565", 
+        white: "#ECDFCC", 
+        gray: "#B0B0B0", 
+        glass: "#FFFFFF20",
       };
       setVideo(SkillsVideo);
     } else if (location.pathname === "/projects") {

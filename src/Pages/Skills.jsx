@@ -2,6 +2,7 @@ import skillsData from "../Data/skillsData";
 import React, { useState } from "react";
 import "../style/skills.css";
 import ProgressBar from "../components/ProgressBar";
+import { motion } from "framer-motion";
 
 const Skills = () => {
   const [activeSection, setActiveSection] = useState("FRONTEND");
@@ -28,10 +29,15 @@ const Skills = () => {
           Backend
         </button>
       </div>
-      <div className="skills-container glassmorphism">
+      <motion.div
+        layout
+        transition={{ duration: 0.5, type: "spring" }}
+        className="skills-container glassmorphism"
+      >
         <h2 className="skills-header">{activeSection}</h2>
+        <span className="line-separator"></span>
+
         <div className="skills-layout">
-  
           <div className="skills-titles">
             {currentSkills.map((skill) => (
               <div className="skill-title" key={skill.title}>
@@ -48,7 +54,7 @@ const Skills = () => {
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

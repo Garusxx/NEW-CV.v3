@@ -1,23 +1,43 @@
-.progress-container {
-  width: 100%;
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 5px #FFD600;
+  }
+  50% {
+    box-shadow: 0 0 15px #FFD600;
+  }
+  100% {
+    box-shadow: 0 0 5px #FFD600;
+  }
+}
+
+.light-bar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: start;
+}
+
+.light {
+  width: 20px;
   height: 20px;
-  background-color: #222;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 0 10px #000;
+  background-color: #333;
+  box-shadow: inset 0 0 5px #000;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
-.progress-bar {
-  height: 100%;
-  background: linear-gradient(270deg, #00f, #0ff, #00f);
-  background-size: 400% 400%;
-  animation: glowGradient 5s ease infinite;
-  border-radius: 10px;
-  box-shadow: 0 0 15px #0ff, 0 0 25px #0ff;
+@keyframes popIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
-@keyframes glowGradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+.light.active {
+  background-color: #FFD600;
+  animation: pulse 1.5s infinite, popIn 0.3s ease-out;
+  box-shadow: 0 0 15px #FFD600;
 }
