@@ -1,5 +1,6 @@
 import About from "./Pages/About";
 import Skills from "./Pages/Skills";
+import Projrects from "./Pages/Projects";
 import Background from "./components/Background";
 import Nav from "./components/Nav";
 import {
@@ -9,7 +10,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import { useEffect, useState } from "react";
-import AboutVideo from "/video/AboutMe4k.mp4";
+import AboutVideo from "/video/AboutMe2k.mp4";
 import SkillsVideo from "/video/Skills.mp4";
 
 function AppContent() {
@@ -84,6 +85,7 @@ function AppContent() {
       <Routes>
         <Route path="/" element={<About />} />
         <Route path="/skills" element={<Skills />} />
+        <Route path="/projects" element={<Projrects />} />
       </Routes>
     </>
   );

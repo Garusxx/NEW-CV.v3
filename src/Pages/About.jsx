@@ -16,21 +16,20 @@ const About = () => {
   return (
     <>
       <div className="main-content">
-        <div className="left-side">
-          <div className="header">
-            <div className="header-content glassmorphism">
-              <div className="avatar-container">
-                <img
-                  src="/public/image/test.png"
-                  className="avatar"
-                  alt="avatar"
-                />
-              </div>
-              <div>
-                <h1>Rafal Zakrzewski</h1>
-                <span className="line-separator"></span>
-                <h2>Fullstack Developer</h2>
-              </div>
+        
+        <div className="header">
+          <div className="header-content glassmorphism">
+            <div className="avatar-container">
+              <img
+                src="/public/image/test.png"
+                className="avatar"
+                alt="avatar"
+              />
+            </div>
+            <div>
+              <h1>Rafal Zakrzewski</h1>
+              <span className="line-separator"></span>
+              <h2>Fullstack Developer</h2>
             </div>
           </div>
         </div>

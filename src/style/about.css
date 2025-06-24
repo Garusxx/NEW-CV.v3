@@ -1,10 +1,11 @@
 .main-content {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* dwie równe kolumny */
   width: 100vw;
   height: 100vh;
   z-index: 1;
   padding: 1rem;
+  gap: 2rem; /* odstęp między kolumnami, opcjonalnie */
 }
 
 .text-content {
@@ -40,16 +41,12 @@
   gap: 1rem;
 }
 
-.left-side {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-}
-
 .header {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end; /* dopasuj w razie potrzeby */
+  padding: 1rem;
 }
 
 .header h1 {
@@ -79,7 +76,7 @@
 .avatar {
   width: 300px;
   height: auto;
-  border-radius: 8px;
+
   opacity: 0.95;
   border: 1.5px solid var(--color-white);
   display: block;
