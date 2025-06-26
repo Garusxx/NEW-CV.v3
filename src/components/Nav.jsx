@@ -6,9 +6,9 @@ import SkillsSvg from "../assets/SVG/SkillsSvg";
 import ProjectsSvg from "../assets/SVG/ProjectsSvg";
 import ContactSvg from "../assets/SVG/Contact.Svg";
 
-const Nav = ({ theme }) => {
+const Nav = ({ theme, className }) => {
   return (
-    <div className="icons glassmorphism">
+    <div className={`${className} nav-base glassmorphism`}>
       <nav>
         <ul>
           <Link to="/">

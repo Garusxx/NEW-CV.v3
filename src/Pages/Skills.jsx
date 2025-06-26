@@ -15,20 +15,6 @@ const Skills = () => {
 
   return (
     <div className="skills-main">
-      <div className="skills-buttons">
-        <button
-          className={activeSection === "FRONTEND" ? "active" : ""}
-          onClick={() => handleSetSection("FRONTEND")}
-        >
-          Frontend
-        </button>
-        <button
-          className={activeSection === "BACKEND" ? "active" : ""}
-          onClick={() => handleSetSection("BACKEND")}
-        >
-          Backend
-        </button>
-      </div>
       <motion.div
         layout
         transition={{ duration: 0.5, type: "spring" }}
@@ -53,6 +39,20 @@ const Skills = () => {
               </div>
             ))}
           </div>
+        </div>
+        <div className="skills-buttons">
+          <button
+            className={activeSection === "FRONTEND" ? "active" : ""}
+            onClick={() => handleSetSection("FRONTEND")}
+          >
+            Frontend
+          </button>
+          <button
+            className={activeSection === "BACKEND" ? "active" : ""}
+            onClick={() => handleSetSection("BACKEND")}
+          >
+            Backend
+          </button>
         </div>
       </motion.div>
     </div>

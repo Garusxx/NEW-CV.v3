@@ -16,7 +16,6 @@ const About = () => {
   return (
     <>
       <div className="main-content">
-        
         <div className="header">
           <div className="header-content glassmorphism">
             <div className="avatar-container">

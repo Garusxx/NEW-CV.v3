@@ -1,20 +1,27 @@
 import "../style/projrects.css";
 import projectsData from "../Data/projectsData";
+import { TypingEffect } from "../assets/Effects/TypingEffect";
 
 const Projrects = () => {
-  const project = projectsData[1];
+  const projects = Object.values(projectsData).slice(0, 3);
+
   return (
     <div className="main-content">
-      <div className="glassmorphism projects-container">
-        <h1>{project.title}</h1>
-        <span className="line-separator"></span>
-        <img
-          src={project.image}
-          alt={project.title}
-          style={{ maxWidth: "300px", margin: "20px 0" }}
-        />
-        <p>{project.description}</p>
-      </div>
+      {projects.map((project, idx) => (
+        <div className="projects-container glassmorphism" key={idx}>
+          <h1>{project.title}</h1>
+          <img src={project.image} alt={project.title} />
+          <TypingEffect startDelay={500} text={project.description} />
+          <div className="link-container">
+            <a href={project.github} target="_blank" rel="noopener noreferrer">
+              <button type="button">GITHUB</button>
+            </a>
+            <a href={project.demo} target="_blank" rel="noopener noreferrer">
+              <button type="button">DEMO</button>
+            </a>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };

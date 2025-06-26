@@ -1,9 +1,39 @@
 .main-content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, auto);
+  grid-template-rows: repeat(2, 1fr);
   gap: 20px;
   padding: 20px;
   justify-items: center;
-  align-items: start;
+  align-items: center;
+}
+.main-content img {
+  max-width: 26rem;
+  margin-top: 1rem;
+  opacity: 0.95;
+  border: 1.5px solid var(--color-white);
+  display: block;
+  z-index: 2;
+  box-shadow: 0 0 5px var(--color-tertiary), 0 0 10px var(--color-tertiary),
+    0 0 20px var(--color-tertiary), 0 0 40px var(--color-tertiary);
+}
+
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 80%;
+  height: 90%;
+  padding: 1.5rem;
+}
+
+.link-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
 }

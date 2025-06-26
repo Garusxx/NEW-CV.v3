@@ -10,14 +10,18 @@ import {
   useLocation,
 } from "react-router-dom";
 import { useEffect, useState } from "react";
-import AboutVideo from "/video/AboutMe2k.mp4";
-import SkillsVideo from "/video/Skills.mp4";
+import AboutVideo from "/video/AboutMe4k.mp4";
+import SkillsVideo from "/video/Skills4k.mp4";
+import ProjrectsVideo from "/video/Projects4k.mp4";
+import ContactVideo from "/video/Contact4k.mp4";
+import { nav } from "framer-motion/client";
 
 function AppContent() {
   const location = useLocation();
   const [themeColors, setThemeColors] = useState({});
   const [video, setVideo] = useState(AboutVideo);
   const preloadVideos = [AboutVideo, SkillsVideo];
+  const [navClass, setNavClass] = useState("");
 
   useEffect(() => {
     preloadVideos.forEach((src) => {
@@ -29,6 +33,8 @@ function AppContent() {
 
   useEffect(() => {
     let theme = {};
+    let navClass = "";
+    let video = {};
 
     if (location.pathname === "/") {
       theme = {
@@ -39,17 +45,19 @@ function AppContent() {
         gray: "#555555",
         glass: "#0598CE30",
       };
-      setVideo(AboutVideo);
+      navClass = "nav-about";
+      video = AboutVideo;
     } else if (location.pathname === "/skills") {
       theme = {
-        primary: "#181C14", 
-        secondary: "#3C3D37", 
-        tertiary: "#697565", 
-        white: "#ECDFCC", 
-        gray: "#B0B0B0", 
+        primary: "#181C14",
+        secondary: "#3C3D37",
+        tertiary: "#697565",
+        white: "#ECDFCC",
+        gray: "#B0B0B0",
         glass: "#FFFFFF20",
       };
-      setVideo(SkillsVideo);
+      navClass = "nav-skills";
+      video = SkillsVideo;
     } else if (location.pathname === "/projects") {
       theme = {
         primary: "#2E7D32",
@@ -59,6 +67,8 @@ function AppContent() {
         gray: "#555555",
         glass: "#2E7D3230",
       };
+      navClass = "nav-projects";
+      video = ProjrectsVideo;
     } else if (location.pathname === "/contact") {
       theme = {
         primary: "#7E57C2",
@@ -68,9 +78,13 @@ function AppContent() {
         gray: "#555555",
         glass: "#7E57C230",
       };
+      navClass = "nav-contact";
+      video = ContactVideo;
     }
 
     setThemeColors(theme);
+    setNavClass(navClass);
+    setVideo(video);
 
     const root = document.documentElement;
     Object.entries(theme).forEach(([key, value]) => {
@@ -81,7 +95,7 @@ function AppContent() {
   return (
     <>
       <Background video={video} />
-      <Nav theme={themeColors} />
+      <Nav theme={themeColors} className={navClass} />
       <Routes>
         <Route path="/" element={<About />} />
         <Route path="/skills" element={<Skills />} />
