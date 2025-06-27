@@ -3,10 +3,10 @@ import projectsData from "../Data/projectsData";
 import { TypingEffect } from "../assets/Effects/TypingEffect";
 
 const Projrects = () => {
-  const projects = Object.values(projectsData).slice(0, 3);
+  const projects = Object.values(projectsData).slice(0, 2);
 
   return (
-    <div className="main-content">
+    <div className="projects-main-content">
       {projects.map((project, idx) => (
         <div className="projects-container glassmorphism" key={idx}>
           <h1>{project.title}</h1>

@@ -1,0 +1,130 @@
+:root {
+  --menu-size: 24rem;
+  --center-size: 6rem;
+  --icon-size: 4rem;
+}
+
+.menu-container {
+  position: absolute;
+  width: var(--menu-size);
+  height: var(--menu-size);
+  bottom: 5rem;
+  left: 25%;
+  transform: translateX(-50%);
+}
+
+.central-button {
+  width: var(--center-size);
+  height: var(--center-size);
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  top: calc(50% - var(--center-size) / 2);
+  left: calc(50% - var(--center-size) / 2);
+  z-index: 2;
+  transition: background 0.3s ease;
+}
+
+.menu-icon {
+  position: absolute;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  border-radius: 50%;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center center;
+  opacity: 0;
+  transform: scale(0);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  animation: icon-counter-rotation 20s linear infinite;
+  animation-play-state: paused;
+}
+
+.orbit {
+  position: absolute;
+  width: var(--menu-size);
+  height: var(--menu-size);
+  top: 0;
+  left: 0;
+  transform-origin: center center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: menu-rotation 20s linear infinite;
+  animation-play-state: paused;
+}
+
+.menu-container.open .orbit {
+  opacity: 1;
+  pointer-events: auto;
+  animation-play-state: running;
+}
+
+.menu-container.open .menu-icon {
+  opacity: 1;
+  transform: scale(1);
+  animation-play-state: running;
+  pointer-events: auto;
+}
+
+.menu-icon:nth-child(1) {
+  top: 0;
+  left: calc(50% - var(--icon-size) / 2);
+  transform: rotate(0deg);
+}
+.menu-icon:nth-child(2) {
+  top: calc(50% - var(--icon-size) / 2);
+  left: calc(100% - var(--icon-size));
+  transform: rotate(90deg);
+}
+.menu-icon:nth-child(3) {
+  top: calc(100% - var(--icon-size));
+  left: calc(50% - var(--icon-size) / 2);
+  transform: rotate(180deg);
+}
+.menu-icon:nth-child(4) {
+  top: calc(50% - var(--icon-size) / 2);
+  left: 0;
+  transform: rotate(270deg);
+}
+
+.menu-container.open .menu-icon:nth-child(1) {
+  transform: scale(1) translate(0, -10rem);
+  transition-delay: 0.1s;
+}
+.menu-container.open .menu-icon:nth-child(2) {
+  transform: scale(1) translate(10rem, 0);
+  transition-delay: 0.2s;
+}
+.menu-container.open .menu-icon:nth-child(3) {
+  transform: scale(1) translate(0, 10rem);
+  transition-delay: 0.3s;
+}
+.menu-container.open .menu-icon:nth-child(4) {
+  transform: scale(1) translate(-10rem, 0);
+  transition-delay: 0.4s;
+}
+/* Animacje */
+@keyframes menu-rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Ikony obracają się przeciwnie */
+@keyframes icon-counter-rotation {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    transform: scale(1) rotate(-360deg);
+  }
+}

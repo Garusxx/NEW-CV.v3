@@ -15,12 +15,13 @@ import SkillsVideo from "/video/Skills4k.mp4";
 import ProjrectsVideo from "/video/Projects4k.mp4";
 import ContactVideo from "/video/Contact4k.mp4";
 import { nav } from "framer-motion/client";
+import AnimatedMenu from "./components/AnimatedMenu";
 
 function AppContent() {
   const location = useLocation();
   const [themeColors, setThemeColors] = useState({});
   const [video, setVideo] = useState(AboutVideo);
-  const preloadVideos = [AboutVideo, SkillsVideo];
+  const preloadVideos = [AboutVideo, SkillsVideo, ProjrectsVideo, ContactVideo];
   const [navClass, setNavClass] = useState("");
 
   useEffect(() => {
@@ -95,7 +96,8 @@ function AppContent() {
   return (
     <>
       <Background video={video} />
-      <Nav theme={themeColors} className={navClass} />
+      {/* <Nav theme={themeColors} className={navClass} /> */}
+      <AnimatedMenu theme={themeColors} />
       <Routes>
         <Route path="/" element={<About />} />
         <Route path="/skills" element={<Skills />} />

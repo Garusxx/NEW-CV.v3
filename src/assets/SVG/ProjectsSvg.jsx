@@ -1,9 +1,9 @@
 import * as React from "react";
-const SvgComponent = ({ theme }) => (
+const SvgComponent = ({ theme, size }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={128}
-    height={128}
+    width={size}
+    height={size}
     viewBox="0 0 1024 1024"
     fill="none"
   >

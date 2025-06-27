@@ -12,22 +12,22 @@ const Nav = ({ theme, className }) => {
       <nav>
         <ul>
           <Link to="/">
-            <AboutMeSvg theme={theme} />
+            <AboutMeSvg theme={theme} size={64} />
             About
           </Link>
 
           <Link to="/skills">
-            <SkillsSvg theme={theme} />
+            <SkillsSvg theme={theme} size={64} />
             Skills
           </Link>
 
           <Link to="/projects">
-            <ProjectsSvg theme={theme} />
+            <ProjectsSvg theme={theme} size={64} />
             Projects
           </Link>
 
           <Link to="/contact">
-            <ContactSvg theme={theme} />
+            <ContactSvg theme={theme} size={64} />
             Contact
           </Link>
         </ul>
