@@ -1,8 +1,9 @@
 import About from "./Pages/About";
 import Skills from "./Pages/Skills";
 import Projrects from "./Pages/Projects";
+import Contact from "./Pages/Contact";
 import Background from "./components/Background";
-import Nav from "./components/Nav";
+
 import {
   BrowserRouter as Router,
   Route,
@@ -14,7 +15,6 @@ import AboutVideo from "/video/AboutMe4k.mp4";
 import SkillsVideo from "/video/Skills4k.mp4";
 import ProjrectsVideo from "/video/Projects4k.mp4";
 import ContactVideo from "/video/Contact4k.mp4";
-import { nav } from "framer-motion/client";
 import AnimatedMenu from "./components/AnimatedMenu";
 
 function AppContent() {
@@ -96,12 +96,13 @@ function AppContent() {
   return (
     <>
       <Background video={video} />
-      {/* <Nav theme={themeColors} className={navClass} /> */}
-      <AnimatedMenu theme={themeColors} />
+
+      <AnimatedMenu theme={themeColors} className={navClass} />
       <Routes>
         <Route path="/" element={<About />} />
         <Route path="/skills" element={<Skills />} />
         <Route path="/projects" element={<Projrects />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </>
   );

@@ -8,9 +8,26 @@
   position: absolute;
   width: var(--menu-size);
   height: var(--menu-size);
-  bottom: 5rem;
-  left: 25%;
   transform: translateX(-50%);
+}
+
+.nav-about {
+  bottom: 2rem;
+  left: 25%;
+}
+
+.nav-skills {
+  bottom: 40%;
+  left: 55%;
+}
+
+.nav-projects {
+  bottom: 2rem;
+  left: 55%;
+}
+.nav-contact {
+  bottom: 2rem;
+  left: 50%;
 }
 
 .central-button {
@@ -25,106 +42,100 @@
   top: calc(50% - var(--center-size) / 2);
   left: calc(50% - var(--center-size) / 2);
   z-index: 2;
-  transition: background 0.3s ease;
 }
 
 .menu-icon {
   position: absolute;
   width: var(--icon-size);
   height: var(--icon-size);
-  border-radius: 50%;
-  font-size: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  transform-origin: center center;
+  text-align: center;
+  z-index: 2;
   opacity: 0;
-  transform: scale(0);
   transition: transform 0.4s ease, opacity 0.4s ease;
-  animation: icon-counter-rotation 20s linear infinite;
-  animation-play-state: paused;
-}
-
-.orbit {
-  position: absolute;
-  width: var(--menu-size);
-  height: var(--menu-size);
-  top: 0;
-  left: 0;
   transform-origin: center center;
   pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  animation: menu-rotation 20s linear infinite;
-  animation-play-state: paused;
 }
 
-.menu-container.open .orbit {
-  opacity: 1;
-  pointer-events: auto;
-  animation-play-state: running;
+.menu-icon a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
 }
 
 .menu-container.open .menu-icon {
   opacity: 1;
   transform: scale(1);
-  animation-play-state: running;
   pointer-events: auto;
 }
 
-.menu-icon:nth-child(1) {
-  top: 0;
-  left: calc(50% - var(--icon-size) / 2);
-  transform: rotate(0deg);
-}
-.menu-icon:nth-child(2) {
-  top: calc(50% - var(--icon-size) / 2);
-  left: calc(100% - var(--icon-size));
-  transform: rotate(90deg);
-}
-.menu-icon:nth-child(3) {
-  top: calc(100% - var(--icon-size));
-  left: calc(50% - var(--icon-size) / 2);
-  transform: rotate(180deg);
-}
+.menu-icon:nth-child(1),
+.menu-icon:nth-child(2),
+.menu-icon:nth-child(3),
 .menu-icon:nth-child(4) {
-  top: calc(50% - var(--icon-size) / 2);
-  left: 0;
-  transform: rotate(270deg);
+  top: 50%;
+  left: 50%;
 }
 
 .menu-container.open .menu-icon:nth-child(1) {
-  transform: scale(1) translate(0, -10rem);
+  transform: scale(1) translate(5rem, 0);
   transition-delay: 0.1s;
 }
 .menu-container.open .menu-icon:nth-child(2) {
-  transform: scale(1) translate(10rem, 0);
+  transform: scale(1) translate(11rem, -2rem);
   transition-delay: 0.2s;
 }
 .menu-container.open .menu-icon:nth-child(3) {
-  transform: scale(1) translate(0, 10rem);
+  transform: scale(1) translate(17rem, 0);
   transition-delay: 0.3s;
 }
 .menu-container.open .menu-icon:nth-child(4) {
-  transform: scale(1) translate(-10rem, 0);
+  transform: scale(1) translate(22rem, -2rem);
   transition-delay: 0.4s;
 }
-/* Animacje */
-@keyframes menu-rotation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+
+.menu-icons-wrapper {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  width: calc(var(--menu-size) + 4rem);
+  height: calc(var(--menu-size) - 10rem);
+  transform: translate(-50%, -50%) scale(0);
+  display: flex;
+  gap: 2rem;
+  padding: 1rem 2rem;
+  border-radius: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+  transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
-/* Ikony obracają się przeciwnie */
-@keyframes icon-counter-rotation {
-  0% {
-    transform: scale(1) rotate(0deg);
-  }
-  100% {
-    transform: scale(1) rotate(-360deg);
-  }
+.menu-container.open .menu-icons-wrapper {
+  transform: translateY(-50%) scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.menu-icon:hover {
+  transform: scale(1.1) translate(var(--hover-x, 0), var(--hover-y, 0));
+  z-index: 10;
+}
+
+.menu-icon a:hover {
+  color: var(--color-tertiary);
+  text-shadow: 0 0 5px var(--color-tertiary), 0 0 10px var(--color-tertiary),
+    0 0 20px var(--color-tertiary), 0 0 30px var(--color-tertiary);
+}
+
+.menu-icon a:hover svg {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 5px var(--color-primary));
+  transition: transform 0.3s ease;
 }
