@@ -16,6 +16,7 @@ import SkillsVideo from "/video/Skills4k.mp4";
 import ProjrectsVideo from "/video/Projects4k.mp4";
 import ContactVideo from "/video/Contact4k.mp4";
 import AnimatedMenu from "./components/AnimatedMenu";
+import FilmBars from "./components/FilmBars";
 
 function AppContent() {
   const location = useLocation();
@@ -23,6 +24,7 @@ function AppContent() {
   const [video, setVideo] = useState(AboutVideo);
   const preloadVideos = [AboutVideo, SkillsVideo, ProjrectsVideo, ContactVideo];
   const [navClass, setNavClass] = useState("");
+  const [filmBarsClass, setFilmBarsClass] = useState("");
 
   useEffect(() => {
     preloadVideos.forEach((src) => {
@@ -36,6 +38,7 @@ function AppContent() {
     let theme = {};
     let navClass = "";
     let video = {};
+    let filmBarsClass = "";
 
     if (location.pathname === "/") {
       theme = {
@@ -58,6 +61,7 @@ function AppContent() {
         glass: "#FFFFFF20",
       };
       navClass = "nav-skills";
+      filmBarsClass = "film-bars-skills";
       video = SkillsVideo;
     } else if (location.pathname === "/projects") {
       theme = {
@@ -85,6 +89,7 @@ function AppContent() {
 
     setThemeColors(theme);
     setNavClass(navClass);
+    setFilmBarsClass(filmBarsClass);
     setVideo(video);
 
     const root = document.documentElement;
@@ -96,9 +101,10 @@ function AppContent() {
   return (
     <>
       <Background video={video} />
-
+      <FilmBars className={filmBarsClass} />
       <AnimatedMenu theme={themeColors} className={navClass} />
-      <Routes>
+
+      <Routes location={location} key={location.pathname}>
         <Route path="/" element={<About />} />
         <Route path="/skills" element={<Skills />} />
         <Route path="/projects" element={<Projrects />} />

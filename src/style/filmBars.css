@@ -1,0 +1,94 @@
+.film-bar-animation {
+  left: 0;
+  flex: 0.75;
+  background-color: black;
+  z-index: -1;
+  pointer-events: none;
+
+  mask-image: repeating-linear-gradient(
+    to right,
+    transparent 0,
+    transparent 30px,
+    black 30px,
+    black 70px
+  );
+  -webkit-mask-image: repeating-linear-gradient(
+    to right,
+    transparent 0,
+    transparent 30px,
+    black 30px,
+    black 70px
+  );
+
+  mask-repeat: repeat;
+  mask-size: 70px 100%;
+  -webkit-mask-repeat: repeat;
+  -webkit-mask-size: 70px 100%;
+
+  animation: scroll-mask 4s linear infinite;
+}
+
+@keyframes scroll-mask {
+  0% {
+    mask-position: 0 0;
+    -webkit-mask-position: 0 0;
+  }
+  100% {
+    mask-position: 70px 0;
+    -webkit-mask-position: 70px 0;
+  }
+}
+
+.film-bar {
+  position: fixed;
+  width: 100vw;
+  height: 80vh;
+  left: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+.film-bar.top {
+  top: -68vh;
+  transition: transform 0.5s ease;
+}
+
+.film-bar.bottom {
+  bottom: -68vh;
+  transition: transform 0.5s ease;
+}
+
+.black-bar {
+  background-color: black;
+  flex: 25;
+  height: 100%;
+}
+
+.black-bar-last {
+  background-color: black;
+  flex: 0.5;
+  height: 100%;
+}
+
+.black-bar-first {
+  position: relative;
+  background-color: black;
+}
+
+.film-bar.top.film-bars-skills,
+.film-bar.bottom.film-bars-skills {
+  transition: transform 0.5s ease;
+}
+
+.film-bar.top.film-bars-skills {
+  transform: rotate(-45deg) translateX(-700px) translateY(-450px);
+}
+
+.film-bar.bottom.film-bars-skills {
+  transform: rotate(-45deg) translateX(700px) translateY(450px);
+}

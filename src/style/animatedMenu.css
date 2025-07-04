@@ -13,12 +13,12 @@
 
 .nav-about {
   bottom: 2rem;
-  left: 25%;
+  left: 5%;
 }
 
 .nav-skills {
   bottom: 40%;
-  left: 55%;
+  left: 50%;
 }
 
 .nav-projects {
@@ -41,7 +41,7 @@
   position: absolute;
   top: calc(50% - var(--center-size) / 2);
   left: calc(50% - var(--center-size) / 2);
-  z-index: 2;
+  z-index: 99;
 }
 
 .menu-icon {

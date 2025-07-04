@@ -2,22 +2,14 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  gap: 20px;
-  padding: 20px;
+  gap: 1rem;
+  padding: 2rem;
   justify-items: center;
   align-items: center;
+  height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
 }
-.projects-main-content img {
-  max-width: 30rem;
-  margin-top: 1rem;
-  opacity: 0.95;
-  border: 1.5px solid var(--color-white);
-  display: block;
-  z-index: 2;
-  box-shadow: 0 0 5px var(--color-tertiary), 0 0 10px var(--color-tertiary),
-    0 0 20px var(--color-tertiary), 0 0 40px var(--color-tertiary);
-}
-
 .projects-container {
   display: flex;
   flex-direction: column;
@@ -29,6 +21,17 @@
   padding: 1.5rem;
 }
 
+.projects-main-content img {
+  max-width: 80%;
+  margin-top: 1rem;
+  opacity: 0.95;
+  border: 1.5px solid var(--color-white);
+  display: block;
+  z-index: 2;
+  box-shadow: 0 0 5px var(--color-tertiary), 0 0 10px var(--color-tertiary),
+    0 0 20px var(--color-tertiary), 0 0 40px var(--color-tertiary);
+}
+
 .link-container {
   display: flex;
   flex-direction: row;
@@ -37,4 +40,11 @@
   gap: 1rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+.pagination-buttons {
+  grid-column: 1 / 1;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }

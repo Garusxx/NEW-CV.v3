@@ -1,3 +1,5 @@
+import AboutMeImage from "../assets/image/bakgrand-about-me.png";
+
 const Background = ({ video }) => {
   return (
     <div>

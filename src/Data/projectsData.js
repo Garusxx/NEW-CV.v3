@@ -53,6 +53,14 @@ const projects = {
     github: "https://github.com/Garusxx/react-food-app",
     demo: "https://github.com/Garusxx/react-food-app",
   },
+  7: {
+    title: "REACT-FOOD-APP",
+    image: pSix,
+    description:
+      "Simple food application using an API to display current food offers and menus for various restaurants.",
+    github: "https://github.com/Garusxx/react-food-app",
+    demo: "https://github.com/Garusxx/react-food-app",
+  },
 };
 
 export default projects;

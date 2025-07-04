@@ -1,13 +1,29 @@
 import "../style/projrects.css";
 import projectsData from "../Data/projectsData";
 import { TypingEffect } from "../assets/Effects/TypingEffect";
+import { useState } from "react";
 
-const Projrects = () => {
-  const projects = Object.values(projectsData).slice(0, 2);
+const Projects = () => {
+  const [startIndex, setStartIndex] = useState(0);
+  const projects = Object.values(projectsData);
+
+  const handleNext = () => {
+    if (startIndex + 2 < projects.length) {
+      setStartIndex(startIndex + 2);
+    }
+  };
+
+  const handlePrevious = () => {
+    if (startIndex - 2 >= 0) {
+      setStartIndex(startIndex - 2);
+    }
+  };
+
+  const visibleProjects = projects.slice(startIndex, startIndex + 2);
 
   return (
     <div className="projects-main-content">
-      {projects.map((project, idx) => (
+      {visibleProjects.map((project, idx) => (
         <div className="projects-container glassmorphism" key={idx}>
           <h1>{project.title}</h1>
           <img src={project.image} alt={project.title} />
@@ -22,8 +38,20 @@ const Projrects = () => {
           </div>
         </div>
       ))}
+
+      <div className="pagination-buttons">
+        <button onClick={handlePrevious} disabled={startIndex === 0}>
+          PREVIOUS
+        </button>
+        <button
+          onClick={handleNext}
+          disabled={startIndex + 2 >= projects.length}
+        >
+          NEXT
+        </button>
+      </div>
     </div>
   );
 };
 
-export default Projrects;
+export default Projects;
