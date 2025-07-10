@@ -17,7 +17,16 @@ const About = () => {
   return (
     <>
       <div className="main-content">
-        <div className="header">
+        <motion.div
+          className="header"
+          initial={{ opacity: 0, x: -90 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: 50 }}
+          transition={{
+            duration: 1,
+            ease: [0.25, 0.8, 0.25, 1],
+          }}
+        >
           <div className="header-content glassmorphism">
             <div className="avatar-container">
               <img
@@ -32,14 +41,17 @@ const About = () => {
               <h2>Fullstack Developer</h2>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         <div className="text-content-wrapper">
           <img src={AboutMeImage} alt="About Me" className="about-me-image" />
 
           <motion.div
             layout
-            transition={{ duration: 0.5, type: "spring" }}
+            initial={{ opacity: 0, x: 90 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 50 }}
+            transition={{ duration: 1, type: "spring" }}
             className="text-content glassmorphism"
           >
             {activeSection === "ABOUT ME" && (

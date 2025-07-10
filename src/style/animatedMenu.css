@@ -17,14 +17,15 @@
 }
 
 .nav-skills {
-  bottom: 40%;
-  left: 50%;
+  bottom: 2rem;
+  left: 5%;
 }
 
 .nav-projects {
   bottom: 2rem;
   left: 55%;
 }
+
 .nav-contact {
   bottom: 2rem;
   left: 50%;

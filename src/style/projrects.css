@@ -1,23 +1,22 @@
 .projects-main-content {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  display: flex;
   gap: 1rem;
-  padding: 2rem;
-  justify-items: center;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
   height: 100vh;
   width: 100vw;
-  box-sizing: border-box;
 }
+
 .projects-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 80%;
-  height: 90%;
+  margin-top: 2;
+  width: 100%;
+  max-width: 60rem;
   padding: 1.5rem;
 }
 
@@ -47,4 +46,12 @@
   display: flex;
   justify-content: center;
   gap: 1rem;
+}
+
+.left-button {
+  transform: rotate(90deg);
+}
+
+.right-button {
+  transform: rotate(-90deg);
 }

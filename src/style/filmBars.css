@@ -28,6 +28,10 @@
   animation: scroll-mask 4s linear infinite;
 }
 
+.fast-animation {
+  animation: scroll-mask 0.2s linear infinite;
+}
+
 @keyframes scroll-mask {
   0% {
     mask-position: 0 0;
@@ -91,4 +95,12 @@
 
 .film-bar.bottom.film-bars-skills {
   transform: rotate(-45deg) translateX(700px) translateY(450px);
+}
+
+.film-bar.top.film-bars-projects {
+  transform: rotate(-90deg) translateX(-700px) translateY(-1100px);
+}
+
+.film-bar.bottom.film-bars-projects {
+  transform: rotate(-90deg) translateX(700px) translateY(1100px);
 }

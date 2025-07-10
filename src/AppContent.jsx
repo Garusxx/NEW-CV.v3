@@ -65,14 +65,15 @@ function AppContent() {
       video = SkillsVideo;
     } else if (location.pathname === "/projects") {
       theme = {
-        primary: "#2E7D32",
-        secondary: "#1B5E20",
-        tertiary: "#66BB6A",
+        primary: "#C62828",
+        secondary: "#8B0000",
+        tertiary: "#EF5350",
         white: "#ffffff",
         gray: "#555555",
-        glass: "#2E7D3230",
+        glass: "#C6282830",
       };
       navClass = "nav-projects";
+      filmBarsClass = "film-bars-projects";
       video = ProjrectsVideo;
     } else if (location.pathname === "/contact") {
       theme = {
@@ -84,6 +85,7 @@ function AppContent() {
         glass: "#7E57C230",
       };
       navClass = "nav-contact";
+      filmBarsClass = "film-bars-contact";
       video = ContactVideo;
     }
 

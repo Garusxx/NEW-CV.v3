@@ -2,54 +2,64 @@ import "../style/projrects.css";
 import projectsData from "../Data/projectsData";
 import { TypingEffect } from "../assets/Effects/TypingEffect";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const Projects = () => {
-  const [startIndex, setStartIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const projects = Object.values(projectsData);
+  const project = projects[currentIndex];
 
   const handleNext = () => {
-    if (startIndex + 2 < projects.length) {
-      setStartIndex(startIndex + 2);
+    if (currentIndex + 1 < projects.length) {
+      setCurrentIndex(currentIndex + 1);
     }
   };
 
   const handlePrevious = () => {
-    if (startIndex - 2 >= 0) {
-      setStartIndex(startIndex - 2);
+    if (currentIndex - 1 >= 0) {
+      setCurrentIndex(currentIndex - 1);
     }
   };
 
-  const visibleProjects = projects.slice(startIndex, startIndex + 2);
-
   return (
     <div className="projects-main-content">
-      {visibleProjects.map((project, idx) => (
-        <div className="projects-container glassmorphism" key={idx}>
-          <h1>{project.title}</h1>
-          <img src={project.image} alt={project.title} />
-          <TypingEffect startDelay={500} text={project.description} />
-          <div className="link-container">
-            <a href={project.github} target="_blank" rel="noopener noreferrer">
-              <button type="button">GITHUB</button>
-            </a>
-            <a href={project.demo} target="_blank" rel="noopener noreferrer">
-              <button type="button">DEMO</button>
-            </a>
-          </div>
+      <button
+        className="left-button"
+        onClick={handlePrevious}
+        disabled={currentIndex === 0}
+      >
+        PREVIOUS
+      </button>
+      <motion.div
+        className="projects-container glassmorphism"
+        initial={{ opacity: 0, y: -90 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 50 }}
+        transition={{
+          duration: 1, 
+          ease: [0.25, 0.8, 0.25, 1], 
+        }}
+        key={project.title}
+      >
+        <h1>{project.title}</h1>
+        <img src={project.image} alt={project.title} />
+        <TypingEffect startDelay={500} text={project.description} />
+        <div className="link-container">
+          <a href={project.github} target="_blank" rel="noopener noreferrer">
+            <button type="button">GITHUB</button>
+          </a>
+          <a href={project.demo} target="_blank" rel="noopener noreferrer">
+            <button type="button">DEMO</button>
+          </a>
         </div>
-      ))}
-
-      <div className="pagination-buttons">
-        <button onClick={handlePrevious} disabled={startIndex === 0}>
-          PREVIOUS
-        </button>
-        <button
-          onClick={handleNext}
-          disabled={startIndex + 2 >= projects.length}
-        >
-          NEXT
-        </button>
-      </div>
+      </motion.div>
+      <button
+        className="right-button"
+        onClick={handleNext}
+        disabled={currentIndex + 1 >= projects.length}
+      >
+        NEXT
+      </button>
     </div>
   );
 };
