@@ -1,6 +1,6 @@
 .projects-main-content {
+  position: relative;
   display: flex;
-  gap: 1rem;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -8,16 +8,28 @@
   width: 100vw;
 }
 
-.projects-container {
+.projects-container,
+.projects-container-up {
+  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-top: 2;
+  top: 10rem;
+  left: 30rem;
   width: 100%;
-  max-width: 60rem;
+  max-width: 50rem;
   padding: 1.5rem;
+}
+
+.projects-container-up {
+  z-index: 2;
+}
+
+.projects-container > * {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .projects-main-content img {
@@ -49,9 +61,15 @@
 }
 
 .left-button {
+  position: absolute;
   transform: rotate(90deg);
+  z-index: 44;
+  margin-right: 70rem;
 }
 
 .right-button {
+  position: absolute;
   transform: rotate(-90deg);
+  z-index: 44;
+  margin-left: 50rem;
 }

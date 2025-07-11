@@ -1,9 +1,14 @@
-import AboutMeImage from "../assets/image/bakgrand-about-me.png";
-
-const Background = ({ video }) => {
+const Background = ({ video, className }) => {
   return (
     <div>
-      <video key={video} autoPlay muted loop playsInline className="bg-video">
+      <video
+        key={video}
+        autoPlay
+        muted
+        loop
+        playsInline
+        className={`bg-video ${className}`}
+      >
         <source src={video} type="video/mp4" />
         Your browser does not support the video tag.
       </video>

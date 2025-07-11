@@ -25,6 +25,7 @@ function AppContent() {
   const preloadVideos = [AboutVideo, SkillsVideo, ProjrectsVideo, ContactVideo];
   const [navClass, setNavClass] = useState("");
   const [filmBarsClass, setFilmBarsClass] = useState("");
+  const [videoClass, setVideoClass] = useState("");
 
   useEffect(() => {
     preloadVideos.forEach((src) => {
@@ -39,6 +40,7 @@ function AppContent() {
     let navClass = "";
     let video = {};
     let filmBarsClass = "";
+    let videoClass = "";
 
     if (location.pathname === "/") {
       theme = {
@@ -61,6 +63,7 @@ function AppContent() {
         glass: "#FFFFFF20",
       };
       navClass = "nav-skills";
+      videoClass = "mirror";
       filmBarsClass = "film-bars-skills";
       video = SkillsVideo;
     } else if (location.pathname === "/projects") {
@@ -93,6 +96,7 @@ function AppContent() {
     setNavClass(navClass);
     setFilmBarsClass(filmBarsClass);
     setVideo(video);
+    setVideoClass(videoClass);
 
     const root = document.documentElement;
     Object.entries(theme).forEach(([key, value]) => {
@@ -102,7 +106,7 @@ function AppContent() {
 
   return (
     <>
-      <Background video={video} />
+      <Background video={video} className={videoClass} />
       <FilmBars className={filmBarsClass} />
       <AnimatedMenu theme={themeColors} className={navClass} />
 

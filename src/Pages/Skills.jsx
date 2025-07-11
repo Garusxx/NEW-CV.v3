@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "../style/skills.css";
 import ProgressBar from "../components/ProgressBar";
 import { motion } from "framer-motion";
-import skillsImage from "../assets/image/bakgrand-skills.png";
+import skillsImage from "../assets/image/background-skills.png";
 
 const Skills = () => {
   const [activeSection, setActiveSection] = useState("FRONTEND");
@@ -16,8 +16,8 @@ const Skills = () => {
 
   return (
     <div className="skills-main">
-      
-      <img src={skillsImage} alt="Skills" className="about-me-image" />
+      <img src={skillsImage} alt="Skills" className="about-me-image mirror" />
+
       <motion.div
         layout
         transition={{ duration: 0.5, type: "spring" }}

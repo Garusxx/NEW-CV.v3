@@ -32,8 +32,6 @@ html {
   z-index: -2;
 }
 
-
-
 .glassmorphism {
   background: var(--color-glass);
   backdrop-filter: blur(9.3px);
@@ -44,6 +42,12 @@ html {
   border-radius: 12px;
   transition: box-shadow 0.3s ease-in-out;
 }
+
+.mirror {
+  transform: scaleX(-1);
+}
+
+
 
 /* #555555	(85,85,85)
 #ffffff	(255,255,255)

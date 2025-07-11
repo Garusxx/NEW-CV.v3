@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import "../style/About.css";
 import educationData from "../Data/educationData";
 import careerData from "../Data/careerData";
-import AboutMeImage from "../assets/image/bakgrand-about-me.png";
+import AboutMeImage from "../assets/image/background-about-me.png";
 
 const About = () => {
   const [count, setCount] = useState(0);
