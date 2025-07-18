@@ -33,6 +33,7 @@
 
 .calendar-container {
   text-align: center;
+  max-width: 80rem;
 }
 
 .calendar-container h3 {
@@ -53,6 +54,10 @@
   padding: 0.5rem;
   border-radius: 8px;
   text-align: center;
+}
+
+.day-number {
+  font-size: 1.8rem;
 }
 
 .date-column {
@@ -102,5 +107,44 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 1440px) {
+  .contact-wrapper {
+    margin-top: 20rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-wrapper {
+    margin-top: 35rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .contact-wrapper {
+    flex-direction: column;
+  }
+
+  .calendar-container {
+    justify-content: center;
+    font-size: 1.2rem;
+  }
+
+  .date-column {
+    font-size: 1.2rem;
+  }
+
+  .day-number {
+    font-size: 3rem;
+  }
+
+  .contact-wrapper {
+    margin-top: 17rem;
+  }
+
+  .date-list {
+    justify-content: center;
   }
 }

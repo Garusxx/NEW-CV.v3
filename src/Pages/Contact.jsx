@@ -91,10 +91,10 @@ const Contact = () => {
                 <div className="date-column">
                   <span>{dayName}</span>
                   <span
+                    className="day-number"
                     style={{
                       width: "100%",
                       background: isUnavailable ? "#4A148C" : "#B388EB",
-                      fontSize: "1.8rem",
                     }}
                   >
                     {dayNumber}

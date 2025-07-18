@@ -1,18 +1,35 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { TypingEffect } from "../assets/Effects/TypingEffect";
 import { motion } from "framer-motion";
 import "../style/About.css";
 import educationData from "../Data/educationData";
 import careerData from "../Data/careerData";
 import AboutMeImage from "../assets/image/background-about-me.png";
+import Avatar from "../assets/image/test.png";
 
 const About = () => {
   const [count, setCount] = useState(0);
   const [activeSection, setActiveSection] = useState("ABOUT ME");
+  const [isTablet, setIsTablet] = useState(window.innerWidth <= 768);
+  const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 425);
 
   const handleSetSection = (section) => {
     setActiveSection(section);
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      setIsTablet(width <= 768);
+      setIsMobileView(width <= 425);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <>
@@ -27,13 +44,9 @@ const About = () => {
             ease: [0.25, 0.8, 0.25, 1],
           }}
         >
-          <div className="header-content glassmorphism">
+          <div className={`header-content ${!isTablet ? "glassmorphism" : ""}`}>
             <div className="avatar-container">
-              <img
-                src="/public/image/test.png"
-                className="avatar"
-                alt="avatar"
-              />
+              <img src={Avatar} className="avatar" alt="avatar" />
             </div>
             <div>
               <h1>Rafal Zakrzewski</h1>
@@ -86,7 +99,10 @@ const About = () => {
                 <h2>Career</h2>
                 <span className="line-separator"></span>
                 {careerData.map((item) => (
-                  <div key={item.id}>
+                  <div
+                    key={item.id}
+                    className={isMobileView ? "mobile-scroll" : ""}
+                  >
                     <h3>{item.title}</h3>
                     <h4>{item.employer}</h4>
                     <p>{item.content}</p>
@@ -135,7 +151,10 @@ const About = () => {
                 <h2>Career</h2>
                 <span className="line-separator"></span>
                 {careerData.map((item) => (
-                  <div key={item.id}>
+                  <div
+                    key={item.id}
+                    className={isMobileView ? "mobile-scroll" : ""}
+                  >
                     <h3>{item.title}</h3>
                     <h4>{item.employer}</h4>
                     <TypingEffect text={item.content} />

@@ -73,3 +73,79 @@
   z-index: 44;
   margin-left: 50rem;
 }
+
+@media (min-width: 2560px) {
+  .projects-container,
+  .projects-container-up {
+    left: 50rem;
+    top: 15rem;
+  }
+}
+
+@media (min-width: 3440px) {
+  .projects-container,
+  .projects-container-up {
+    left: 77rem;
+    top: 22rem;
+  }
+}
+
+@media (max-width: 1440px) {
+  .projects-container,
+  .projects-container-up {
+    left: 30rem;
+    top: 20rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .projects-container,
+  .projects-container-up {
+    left: 21rem;
+    top: 22rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-container,
+  .projects-container-up {
+    left: 18rem;
+    top: 28rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .projects-container,
+  .projects-container-up {
+    left: 2rem;
+    top: 28rem;
+    padding: 0;
+    font-size: 1.5rem;
+  }
+
+  .left-button {
+    position: absolute;
+    transform: none;
+    z-index: 44;
+    margin-top: 40rem;
+    margin-right: 10rem;
+  }
+
+  .right-button {
+    position: absolute;
+    transform: none;
+    z-index: 44;
+    margin-top: 40rem;
+    margin-left: 14rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .projects-container,
+  .projects-container-up {
+    left: 0rem;
+    top: 28rem;
+    padding: 0;
+    font-size: 1.5rem;
+  }
+}

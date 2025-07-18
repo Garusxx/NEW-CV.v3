@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import AboutMeSvg from "../assets/SVG/AboutMeSvg";
 import SkillsSvg from "../assets/SVG/SkillsSvg";
@@ -12,6 +12,23 @@ const AnimatedMenu = ({ theme, className }) => {
   const [iconSize, setIconSize] = useState(96);
 
   const toggleMenu = () => setIsOpen(!isOpen);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width <= 1025) {
+        setIconSize(48);
+      } else if (width <= 1440) {
+        setIconSize(72);
+      } else {
+        setIconSize(96);
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <motion.div
