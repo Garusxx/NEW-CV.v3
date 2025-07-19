@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { TypingEffect } from "../assets/Effects/TypingEffect";
 import { motion } from "framer-motion";
-import "../style/About.css";
+import "../style/about.css";
 import educationData from "../Data/educationData";
 import careerData from "../Data/careerData";
 import AboutMeImage from "../assets/image/background-about-me.png";
