@@ -1,4 +1,4 @@
-import "../style/FilmBars.css";
+import "../style/filmBars.css";
 
 const FilmBars = ({ className }) => {
   return (
