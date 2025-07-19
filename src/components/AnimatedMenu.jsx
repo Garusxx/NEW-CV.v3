@@ -5,7 +5,7 @@ import SkillsSvg from "../assets/SVG/SkillsSvg";
 import ProjectsSvg from "../assets/SVG/ProjectsSvg";
 import ContactSvg from "../assets/SVG/Contact.Svg";
 import { motion } from "framer-motion";
-import "../style/AnimatedMenu.css";
+import "../style/animatedMenu.css";
 
 const AnimatedMenu = ({ theme, className }) => {
   const [isOpen, setIsOpen] = useState(false);
