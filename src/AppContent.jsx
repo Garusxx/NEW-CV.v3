@@ -11,10 +11,17 @@ import {
   useLocation,
 } from "react-router-dom";
 import { useEffect, useState } from "react";
+
 import AboutVideo from "/video/AboutMe4k.mp4";
 import SkillsVideo from "/video/Skills4k.mp4";
 import ProjrectsVideo from "/video/Projects4k.mp4";
 import ContactVideo from "/video/Contact4k.mp4";
+
+import BgLotr from "./assets/image/bg_lotr.png";
+import BgAlien from "./assets/image/bg_alien.png";
+import BgFightClub from "./assets/image/bg_fight_club.png";
+import BgPF from "./assets/image/bg_pf.png";
+
 import AnimatedMenu from "./components/AnimatedMenu";
 import FilmBars from "./components/FilmBars";
 
@@ -26,6 +33,7 @@ function AppContent() {
   const [navClass, setNavClass] = useState("");
   const [filmBarsClass, setFilmBarsClass] = useState("");
   const [videoClass, setVideoClass] = useState("");
+  const [poster, setPoster] = useState(BgLotr);
 
   useEffect(() => {
     preloadVideos.forEach((src) => {
@@ -41,6 +49,7 @@ function AppContent() {
     let video = {};
     let filmBarsClass = "";
     let videoClass = "";
+    let poster = {};
 
     if (location.pathname === "/") {
       theme = {
@@ -53,6 +62,7 @@ function AppContent() {
       };
       navClass = "nav-about";
       video = AboutVideo;
+      poster = BgLotr;
     } else if (location.pathname === "/skills") {
       theme = {
         primary: "#181C14",
@@ -65,6 +75,7 @@ function AppContent() {
       navClass = "nav-skills";
       videoClass = "mirror";
       filmBarsClass = "film-bars-skills";
+      poster = BgAlien;
       video = SkillsVideo;
     } else if (location.pathname === "/projects") {
       theme = {
@@ -77,6 +88,7 @@ function AppContent() {
       };
       navClass = "nav-projects";
       filmBarsClass = "film-bars-projects";
+      poster = BgFightClub;
       video = ProjrectsVideo;
     } else if (location.pathname === "/contact") {
       theme = {
@@ -89,6 +101,7 @@ function AppContent() {
       };
       navClass = "nav-contact";
       filmBarsClass = "film-bars-contact";
+      poster = BgPF;
       video = ContactVideo;
     }
 
@@ -97,6 +110,7 @@ function AppContent() {
     setFilmBarsClass(filmBarsClass);
     setVideo(video);
     setVideoClass(videoClass);
+    setPoster(poster);
 
     const root = document.documentElement;
     Object.entries(theme).forEach(([key, value]) => {
@@ -106,7 +120,7 @@ function AppContent() {
 
   return (
     <>
-      <Background video={video} className={videoClass} />
+      <Background video={video} className={videoClass} poster={poster} />
       <FilmBars className={filmBarsClass} />
       <AnimatedMenu theme={themeColors} className={navClass} />
 

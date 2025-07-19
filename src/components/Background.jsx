@@ -1,4 +1,4 @@
-const Background = ({ video, className }) => {
+const Background = ({ video, className, poster }) => {
   return (
     <div>
       <video
@@ -7,6 +7,7 @@ const Background = ({ video, className }) => {
         muted
         loop
         playsInline
+        poster={poster}
         className={`bg-video ${className}`}
       >
         <source src={video} type="video/mp4" />

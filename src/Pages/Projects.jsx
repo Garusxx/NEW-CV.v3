@@ -75,10 +75,14 @@ const Projects = () => {
           <TypingEffect startDelay={500} text={project.description} />
           <div className="link-container">
             <a href={project.github} target="_blank" rel="noopener noreferrer">
-              <button type="button">GITHUB</button>
+              <button type="button" disabled={!project.github}>
+                GITHUB
+              </button>
             </a>
             <a href={project.demo} target="_blank" rel="noopener noreferrer">
-              <button type="button">DEMO</button>
+              <button type="button" disabled={!project.demo}>
+                DEMO
+              </button>
             </a>
           </div>
         </motion.div>
