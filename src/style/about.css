@@ -148,7 +148,7 @@
   height: 100%;
 }
 
-.mobile-scroll p {
+.mobile-scroll {
   overflow: auto;
   max-height: 8rem;
   margin-top: 0.5rem;
@@ -189,7 +189,7 @@
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 430px) {
   .main-content {
     display: flex;
     flex-direction: column;
@@ -214,7 +214,7 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 393px) {
   .text-content,
   .text-content-up {
     left: 4rem;
@@ -222,11 +222,15 @@
     padding: 0.5rem;
   }
 }
-@media (max-width: 320px) {
+
+@media (max-width: 360px) {
   .text-content,
   .text-content-up {
-    left: 0rem;
-    top: 16rem;
+    left: 4rem;
+    top: 12rem;
     padding: 0.5rem;
   }
 }
+
+
+

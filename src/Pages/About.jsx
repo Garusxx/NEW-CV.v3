@@ -21,7 +21,7 @@ const About = () => {
     const handleResize = () => {
       const width = window.innerWidth;
       setIsTablet(width <= 768);
-      setIsMobileView(width <= 425);
+      setIsMobileView(width <= 430);
     };
 
     window.addEventListener("resize", handleResize);
@@ -124,13 +124,7 @@ const About = () => {
                 <span className="line-separator"></span>
                 <TypingEffect
                   startDelay={500}
-                  text="On a mission to master JavaScript and React, I’m a developer
-                with a creative edge and a passion for storytelling. I love
-                building smooth, interactive interfaces that connect with
-                users—not just functionally, but emotionally. Heavily inspired
-                by 90s pop culture, I infuse my projects with nostalgic energy
-                and bold visual style. Whether it's a sleek portfolio or a
-                dynamic app, I aim to blend clean code with character."
+                  text="I’m a full-stack developer currently looking for new opportunities, blending technical skills with a strong creative streak. A lifelong fan of 90s pop culture and cinema, I bring that influence into my work through bold visuals and playful details. This site even features scenes from my favorite movies as a nod to the stories and styles that inspire me. From concept to deployment, I aim to deliver projects that are not only functional and maintainable, but also unmistakably mine."
                 />
               </>
             )}

@@ -18,7 +18,7 @@ const AnimatedMenu = ({ theme, className }) => {
       const width = window.innerWidth;
       if (width <= 1025) {
         setIconSize(48);
-      } else if (width <= 1440) {
+      } else if (width <= 1536) {
         setIconSize(72);
       } else {
         setIconSize(96);
