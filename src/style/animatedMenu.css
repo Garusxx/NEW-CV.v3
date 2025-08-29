@@ -255,19 +255,19 @@
 
 @media (max-width: 360px) {
   .nav-about {
-    bottom: 2rem;
-    left: 1rem;
+    bottom: -1rem;
+    left: -3rem;
   }
   .nav-skills {
-    bottom: 2rem;
-    left: 1rem;
+    bottom: -1rem;
+    left: -3rem;
   }
   .nav-projects {
-    bottom: 2rem;
-    left: 1rem;
+    bottom: -1rem;
+    left: -3rem;
   }
   .nav-contact {
-    bottom: 2rem;
-    left: 1rem;
+    bottom: -1rem;
+    left: -3rem;
   }
 }

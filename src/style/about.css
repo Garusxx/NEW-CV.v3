@@ -6,7 +6,6 @@
   height: 100vh;
   padding: 1rem;
   gap: 2rem;
-  overflow-y: auto;
   box-sizing: border-box;
 }
 
@@ -183,11 +182,6 @@
   .header-content {
     flex-direction: column;
   }
-
-  .text-content,
-  .text-content-up {
-    left: 2rem;
-  }
 }
 
 @media (max-width: 430px) {
@@ -209,9 +203,7 @@
 
   .text-content,
   .text-content-up {
-    left: 7rem;
-    top: 16rem;
-    padding: 0.5rem;
+    top: 14rem;
   }
 }
 
@@ -225,10 +217,18 @@
 }
 
 @media (max-width: 360px) {
+  .header-content {
+    margin-left: 3rem;
+    margin-top: 0rem;
+  }
+  .avatar-container {
+    max-width: 100px;
+    height: 100px;
+  }
   .text-content,
   .text-content-up {
-    left: 4rem;
-    top: 12rem;
+    left: 0rem;
+    top: 9rem;
     padding: 0.5rem;
   }
 }
