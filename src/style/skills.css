@@ -63,4 +63,10 @@
   justify-content: space-between;
 }
 
-
+@media (max-width: 1440px) {
+  .skills-container,
+  .skills-container-up {
+    top: 0;
+    right: 10%;
+  }
+}

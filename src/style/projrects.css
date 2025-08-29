@@ -55,3 +55,10 @@
 .right-button {
   transform: rotate(-90deg);
 }
+
+@media (max-width: 1440px) {
+  .projects-main-content {
+    margin-top: 5%;
+    margin-left: -10%;
+  }
+}
