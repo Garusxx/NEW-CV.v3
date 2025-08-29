@@ -35,32 +35,9 @@ const Projects = () => {
           PREVIOUS
         </button>
 
-        <motion.div
-          className="projects-container glassmorphism"
-          initial={{ opacity: 0, y: -90 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 50 }}
-          transition={{
-            duration: 1,
-            ease: [0.25, 0.8, 0.25, 1],
-          }}
-          key={currentIndex + 1}
-        >
-          <h1>{project.title}</h1>
-          <img src={project.image} alt={project.title} />
-          <TypingEffect startDelay={500} text={project.description} />
-          <div className="link-container">
-            <a href={project.github} target="_blank" rel="noopener noreferrer">
-              <button type="button">GITHUB</button>
-            </a>
-            <a href={project.demo} target="_blank" rel="noopener noreferrer">
-              <button type="button">DEMO</button>
-            </a>
-          </div>
-        </motion.div>
 
         <motion.div
-          className="projects-container-up "
+          className="projects-container glassmorphism"
           initial={{ opacity: 0, y: -90 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 50 }}
