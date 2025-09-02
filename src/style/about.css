@@ -109,9 +109,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 300px;
+  max-width: 350px;
   width: 100%;
-  height: 300px;
+  height: 350px;
 }
 
 .avatar {
@@ -154,3 +154,62 @@
   margin-top: 0.5rem;
 }
 
+@media (max-width: 1440px) {
+  .avatar-container {
+    margin-top: -10%;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) {
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+  }
+
+  .avatar-container {
+    max-width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+  }
+}
+
+@media (max-width: 430px) {
+  .main-content {
+    padding: 0;
+  }
+
+  .text-content,
+  .text-content-up {
+    left: 10%;
+  }
+
+  .avatar-container {
+    margin-top: -35%;
+  }
+}
+
+@media (max-width: 390px) {
+  .text-content,
+  .text-content-up {
+    left: 5%;
+  }
+}
+
+@media (max-width: 360px) {
+  .avatar-container {
+    margin-top: -20%;
+  }
+
+  .avatar-container {
+    max-width: 200px;
+    height: 200px;
+  }
+}

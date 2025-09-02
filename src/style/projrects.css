@@ -4,8 +4,8 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 10%;
-  margin-left: 0;
+  margin-top: 5%;
+  margin-left: -30%;
   z-index: 2;
 }
 
@@ -58,7 +58,31 @@
 
 @media (max-width: 1440px) {
   .projects-main-content {
-    margin-top: 5%;
-    margin-left: -10%;
+    margin-top: 2%;
+    margin-left: -30%;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) {
+  .projects-main-content {
+    margin-top: 30%;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 430px) {
+  .projects-main-content {
+    flex-direction: column;
+    margin-top: 20%;
+    margin-left: 0;
+  }
+
+  .left-button {
+    transform: none;
+    margin-bottom: 1rem;
+  }
+  .right-button {
+    transform: none;
+    margin-top: 1rem;
   }
 }

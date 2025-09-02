@@ -186,6 +186,16 @@
   }
 }
 
+@media only screen and (min-device-width: 768px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) {
+  .film-bar.top.film-bars-projects {
+    transform: rotate(-90deg) translateX(-700px) translateY(-1750px);
+  }
+
+  .film-bar.bottom.film-bars-projects {
+    transform: rotate(-90deg) translateX(700px) translateY(1750px);
+  }
+}
+
 @media (max-width: 768px) {
   .film-bar.top.film-bars-skills {
     transform: rotate(-45deg) translateX(-500px) translateY(-200px);
