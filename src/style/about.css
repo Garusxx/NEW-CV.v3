@@ -199,7 +199,7 @@
 @media (max-width: 390px) {
   .text-content,
   .text-content-up {
-    left: 5%;
+    left: 0;
   }
 }
 
