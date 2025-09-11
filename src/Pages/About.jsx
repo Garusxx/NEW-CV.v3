@@ -5,7 +5,7 @@ import "../style/about.css";
 import educationData from "../Data/educationData";
 import careerData from "../Data/careerData";
 import AboutMeImage from "../assets/image/background-about-me.png";
-import Avatar from "../assets/image/test.png";
+import Avatar from "../assets/image/ava.jpeg";
 
 const About = () => {
   const [count, setCount] = useState(0);
